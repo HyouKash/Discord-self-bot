@@ -19,7 +19,7 @@ client.on('message', msg => {
     .setColor("#336DFF")
     .setTitle("PayPal Invoice")
     .setDescription(`New PayPal order`)
-    .addField("Adress", "HyouKa14@protonmail.com")
+    .addField("Adress", "ADRESS HERE")
     .addField("Amout(USD)", `$${params[1]}`)
     .setThumbnail("https://cdn.pixabay.com/photo/2015/05/26/09/37/paypal-784404_1280.png")
 
@@ -35,7 +35,7 @@ client.on('message', msg => {
       .setColor("#FF9C33")
       .setTitle("Bitcoin Invoice")
       .setDescription(`New Bitcoin order`)
-      .addField("Adress", "15fYtvTP8EwTrASXL4GrifNUBxuYNg4pAe")
+      .addField("Adress", "ADRESS HERE")
       .addField("Amout(USD)", `$${params[1]}`)
       .addField("BitCoin Amount", `${params[1]/(JSON.parse(body)["USD"]["buy"])}`.slice(0, 10))
       .setThumbnail("https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/600px-Bitcoin.svg.png")
@@ -50,7 +50,6 @@ client.on('message', msg => {
       msg.member.setNickname(msg.content.replace(`${params[0]}`, '')), msg.channel.send(`Le pseudo a bien été changé en : ${params.slice(1).join(" ")}`);          
   }
 
-  if (params[0] === `>`)
   if (params[0] === `>mult`) {
     
     let result = params[1] * params[2]
@@ -72,7 +71,7 @@ client.on('message', msg => {
   if (params[0] === "/startxp") {
     if(!msg.member.hasPermission(["BAN_MEMBERS", "ADMINISTRATOR"])) return msg.channel.send("Nique ta mère fils de pute");
     var interval = setInterval (function () {
-      msg.channel.send("prout")
+      msg.channel.send("a")
     }, 1 * 60 * 1000); 
   }
 
@@ -83,7 +82,7 @@ client.on('message', msg => {
       const member = msg.guild.member(user);
         if(member) {
           member.ban({
-            reason: "osf", 
+            reason: "x", 
           })          
         } else {
           msg.reply("l'utilisateur n'est pas sur le serveur.");
@@ -92,4 +91,4 @@ client.on('message', msg => {
   }
 })
 
-client.login(token.hyoula);
+client.login(token.token);
